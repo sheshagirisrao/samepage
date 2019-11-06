@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>BootStrap basics</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+        <script>
+            function showresults(){
+                $("#search_results").removeClass('d-none');  
+            }    
+        </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#">
+                    <font class="navbar-brand"> SAMEPAGE</font>
+                    <font class="navbar-subbrand">TM</font>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-10">
+                <h3>
+                    <p class="text-info">Welcome CBO Admin!</p>
+                </h3>
+            </div>
+            <i class="col-md-1 fa fa-bell" style="font-size:30px;color:red"></i>
+            <i class="col-md-1 fa fa-user fa-2x" aria-hidden="true"></i>
+
+        </div>
+    </div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                        role="tab" aria-controls="v-pills-home" aria-selected="false">Members List</a>
+                    <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                        role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                        role="tab" aria-controls="v-pills-profile" aria-selected="false">Calendar</a>
+                </div>
+            </div>
+            <div class="col-10">
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

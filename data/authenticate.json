@@ -1,0 +1,16 @@
+{
+	"admin": {
+		"pcpadmin": {
+			"username": "pcpadmin",
+			"password": "pcpadmin",
+			"role": "pcp",
+			"firstname":""
+		},
+		"cboadmin": {
+			"username": "cboadmin",
+			"password": "cboadmin",
+			"role": "cbo",
+			"firstname":""
+		}
+	}
+}

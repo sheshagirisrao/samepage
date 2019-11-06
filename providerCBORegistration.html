@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <title>BootStrap basics</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#">
+                    <font class="navbar-brand"> SAMEPAGE</font>
+                    <font class="navbar-subbrand">TM</font>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+            <div class="row pt-5">
+                <div class="col-md-12">
+                    <h2>Member Details</h2>
+                    <hr>
+                </div>
+            </div>
+    </div>    
+
+    <div class="container">
+            <div class="row">
+                    <div class="col-3">
+                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">INFO</a>
+                        <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">SDH</a>
+                        <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">PCP</a>
+                        <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">HEALTH PLAN</a>
+                        <a class="nav-link active pt-4" id="v-pills-cbo-tab" data-toggle="pill" href="#v-pills-cbo" role="tab" aria-controls="v-pills-cbo" aria-selected="true">CBO</a>
+                      </div>
+                    </div>
+                    <div class="col-9">
+                      <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                <form>
+                                    <div class="form-group row">
+                                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">MEMBERID</label>
+                                        <div class="col-sm-10">
+                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="XXX-XX-7856">
+                                        </div>
+                                      </div>
+                                        <div class="form-group row">
+                                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">FIRSTNAME</label>
+                                          <div class="col-sm-10">
+                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Jacob">
+                                          </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">LASTNAME</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Thornton">
+                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">EMAIL</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="jacobthronton@gmail.com">
+                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">ADDRESS</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="10 W Golf Rd">
+                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">PHONE</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="897-675-0986" >
+                                                </div>
+                                        </div>
+                                  </form>                        
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            
+                                <div class="container">
+                                        <div class="row pt-4 pl-5">
+                                            <button class="col-md-5 btn btn-danger offset-md-3">Nutrition</button>
+                                         </div>   
+                                         <div class="row pt-4 pl-5">
+                                                <button class="col-md-5 btn btn-success offset-md-3">Housing</button>
+                                         </div> 
+                                         <div class="row pt-4 pl-5">
+                                                <button class="col-md-5 btn btn-danger offset-md-3">Income</button>
+                                         </div> 
+        
+                                         <div class="row pt-4 pl-5">
+                                                <button class="col-md-5 btn btn-danger offset-md-3">Safety</button>
+                                         </div> 
+        
+                                         <div class="row pt-4 pl-5">
+                                                <button class="col-md-5 btn btn-success offset-md-3">Literacy</button>
+                                         </div> 
+        
+                                         <div class="row pt-4 pl-5">
+                                                <button class="col-md-5 btn btn-danger offset-md-3">Transportation</button>
+                                         </div> 
+                                    </div>
+
+
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            
+                                <form>
+                                        <div class="form-group row">
+                                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">FIRSTNAME</label>
+                                          <div class="col-sm-10">
+                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                          </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">LASTNAME</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">EMAIL</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                                </div>
+                                        </div>
+                                      </form>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            
+                                <form>
+                                        <div class="form-group row">
+                                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">INSURANCE COMPANY</label>
+                                          <div class="col-sm-10">
+                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                          </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">INSURANCE PLAN</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">HOSPITAL NAME</label>
+                                                <div class="col-sm-10">
+                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                                </div>
+                                        </div>
+                                      </form>
+                        
+                        </div>
+                        <div class="tab-pane fade show active" id="v-pills-cbo" role="tabpanel" aria-labelledby="v-pills-cbo-tab">
+                          <div class="container"> 
+                              <p class="text-success">You have completed survey sucessfully!</p>
+                          </div>                              
+                        </div>
+                      </div>
+                    </div>
+            </div>
+    </div>
+ </body>
+
+</html>

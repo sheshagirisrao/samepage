@@ -1,0 +1,320 @@
+<html>
+
+<head>
+    <title>BootStrap basics</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+        <script>
+            function showresults(){
+                $("#search_results").removeClass('d-none');  
+            }    
+        </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="#">
+                    <font class="navbar-brand"> SAMEPAGE</font>
+                    <font class="navbar-subbrand">TM</font>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-10">
+                <h3>
+                    <p class="text-info">Welcome Mark!</p>
+                </h3>
+            </div>
+            <i class="col-md-1 fa fa-bell" style="font-size:30px;color:red"></i>
+            <i class="col-md-1 fa fa-user fa-2x" aria-hidden="true"></i>
+
+        </div>
+    </div class="row">
+    <div class="col-md-12">
+        <hr>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col-2">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                        role="tab" aria-controls="v-pills-home" aria-selected="false">Members List</a>
+                    <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
+                        role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link pt-4" id="v-pills-cbo" data-toggle="pill" href="#v-pills-messages" role="tab"
+                        aria-controls="v-pills-messages" aria-selected="false">CBO List</a>
+                    <a class="nav-link pt-4" id="v-pills-cbo" data-toggle="pill" href="#v-pills-search" role="tab"
+                        aria-controls="v-pills-search" aria-selected="true">Search Member</a>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <table class="pt-3 table table-striped col-md-12">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Member Id</th>
+                                    <th scope="col">FirstName</th>
+                                    <th scope="col">LastName</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">XXX-XX-1234</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">XXX-XX-7856</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">XXX-XX-9087</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">XXX-XX-3287</th>
+                                    <td>Steven</td>
+                                    <td>Hammond</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">XXX-XX-3785</th>
+                                    <td>Larry</td>
+                                    <td>Patron</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">XXX-XX-2860</th>
+                                    <td>Tom</td>
+                                    <td>Sawyer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="container left">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+
+                        <form action="#">
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">FIRSTNAME</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">LASTNAME</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">EMAIL</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">ADDRESS</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">PHONE</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">HOSPITAL
+                                    NAME</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                        </form>
+
+
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                        aria-labelledby="v-pills-messages-tab">
+
+                        <table class="pt-3 table table-striped col-md-12">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">CBO Name</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">LastName</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Alvexity Cbo Inc</th>
+                                    <td>1700 E Higgins Rd # 260, Des Plaines, IL 60018</td>
+                                    <td>
+                                        <font class="font-weight-light">(865) 394-0978</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nova Med Cbo </th>
+                                    <td>2033 N Milwaukee Ave, Riverwoods, IL 60015</td>
+                                    <td>
+                                        <font class="font-weight-light">(224) 394-1122</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">The CBO Group - Morgan Stanley</th>
+                                    <td>70 W Madison St, Chicago, IL 60602</td>
+                                    <td>
+                                        <font class="font-weight-light">(867) 394-7865</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Live4Lali</th>
+                                    <td>3255 N Arlington Heights Rd #508, Arlington Heights, IL 60004</td>
+                                    <td>
+                                        <font class="font-weight-light">(844) 584-5254</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bancare Inc</th>
+                                    <td>6 E College Dr # 1, Arlington Heights, IL 60004</td>
+                                    <td>
+                                        <font class="font-weight-light">(847) 394-1122</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Michigan Community Resources</th>
+                                    <td>615 Griswold St #805, Detroit, MI 48226</td>
+                                    <td>
+                                        <font class="font-weight-light"> (312) 394-0998</font>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="container left">
+                            <nav aria-label="...">
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-search" role="tabpanel" aria-labelledby="v-pills-search-tab">                        
+                        <form class="offset-md-4" action="#">
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">FIRSTNAME<font color="red">*</font></label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">LASTNAME<font color="red">*</font></label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="colFormLabelLg"
+                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">SSN<font color="red">*</font></label>
+                                <div class="col-sm-5">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                </div>
+                            </div>
+                            <button  class="btn btn-primary offset-md-3"  onclick="javascript:showresults()">Search</button>
+                            <button  class="btn btn-primary" >Reset</button>
+                            </form>
+                            <div id="search_results" class="d-none">
+                                <hr class="offset-md-1">
+                                <h5 class="text-secondary pt-1 offset-md-2">Search Results</h5>
+                                <table class="pt-1  table table-bordered col-md-9 offset-md-2">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-black-50">MemberId</th>
+                                            <th scope="col" class="text-black-50">FirstName</th>
+                                            <th scope="col" class="text-black-50">LastName</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><a href="providerInfo.html">XXX-XX-7856</a></th>
+                                            <td><font class="font-weight-light">Jacob</font></td>
+                                            <td><font class="font-weight-light">Thornton</font></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

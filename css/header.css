@@ -1,0 +1,23 @@
+.navbar-brand{
+    color: orange
+}
+
+.navbar-light .navbar-brand{
+        color: orange
+}
+
+.navbar-inverse{
+    background-color: cornsilk
+}
+
+.navbar-brand{
+
+    font-size: xx-large
+
+}
+.pink{
+    background:  pink;
+    border: 1px solid purple;
+}
+
+.vline	{ width:5px; height:20px; border:1 solid green; }

@@ -1,0 +1,22 @@
+{
+  "sdoh":[
+      {
+          "memberId":"2347047760",
+          "nutrition":"1",
+          "housing":"1",
+          "income":"1",
+          "safety":"0",
+          "literacy":"0",
+          "transportation":"0"
+      },
+      {
+        "memberId":"7341144539",
+        "nutrition":"1",
+        "housing":"0",
+        "income":"1",
+        "safety":"0",
+        "literacy":"0",
+        "transportation":"1"
+      }
+   ]
+}

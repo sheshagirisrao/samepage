@@ -1,0 +1,21 @@
+{
+  "members":[
+    {
+      "memberId":"2347047760",
+      "firstName":"SMITH",
+      "lastName":"John",
+      "sex":"M",
+      "dob":"6/30/1941",
+      "zipcode":"60061"
+    },
+    {
+        "memberId":"2347047760",
+        "firstName":"JOHNSON",
+        "lastName":"Lucy",
+        "sex":"M",
+        "dob":"6/30/1942",
+        "zipcode":"60061"  
+    }
+  ]
+}
+
