@@ -1,0 +1,21 @@
+{
+  "members":[
+    {
+      "memberId":"2347047760",
+      "mealstartcredit":"81",
+      "mealusedcredit":"76",
+      "foodstartcredit":"0",
+      "foodusedcredit":"0",
+      "transportstartcredit":"81",
+      "transportusedcredit":"12",
+      "peststartcredit":"0",
+      "pestusedcredit":"0",
+      "indoorstartcredit":"1",
+      "indoorusedcredit":"1",
+      "socialstartcredit":"0",
+      "socialusedcredit":"0",
+      "homestartcredit":"0",
+      "homeusedcredit":"0"
+    }
+  ]
+}

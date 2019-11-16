@@ -10,11 +10,11 @@
     <script src="js/authenticate.js"></script>
 
     <script>
-        function validateLogin(){  
+        function validateLogin(){ 
                 var username = $('#userName').val();
                 var password =$('#passWord').val();
                 var loginas = $('#loginAs').val();
-                $.getJSON("http://localhost:8080/web%20development//data/authenticate.json", function(json) {
+                $.getJSON("/data/authenticate.json", function(json) {
                 var objPCP = json.admin.pcpadmin;
                 var objCBO = json.admin.cboadmin;
                 var role;
@@ -90,7 +90,7 @@
     </div>
     <div class="container">
         <div class="row pt-3">
-            <button class="col-md-3 btn btn-primary offset-md-2 " onclick="javascript:parseJson()"> Login </button>
+            <button class="col-md-3 btn btn-primary offset-md-2 " onclick="javascript:validateLogin()"> Login </button>
 
             <button class="col-md-3 btn btn-primary offset-md-2 "> Register </button>
         </div>

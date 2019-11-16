@@ -8,6 +8,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+<script>
+  function showCredits(){
+     alert($("#creditType").val());  
+  }    
+</script>
+
 </head>
 
 <body>
@@ -141,7 +147,7 @@
                                           <div class="input-group-prepend">
                                             <label class="input-group-text" for="inputGroupSelect01">Credit Type</label>
                                           </div>
-                                          <select class="custom-select" id="inputGroupSelect01">
+                                          <select class="custom-select" id="creditType" onchange="javascript:showCredits()">
                                             <option selected>Choose...</option>
                                             <option value="1">Meals</option>
                                             <option value="2">Food & Produce</option>
@@ -155,19 +161,19 @@
                                         <div class="form-group row pt-5 offset-md-2">
                                           <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">START CREDIT</label>
                                           <div class="col-sm-3">
-                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                            <input  class="form-control form-control-lg" id="startCredit" >
                                           </div>
                                         </div>
                                         <div class="form-group row offset-md-2">
                                                 <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">USED CREDIT</label>
                                                 <div class="col-sm-3">
-                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                                  <input class="form-control form-control-lg" id="usedCredit" >
                                                 </div>
                                         </div>
                                         <div class="form-group row offset-md-2">
                                                 <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">BALANCE CREDIT</label>
                                                 <div class="col-sm-3">
-                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" >
+                                                  <input  class="form-control form-control-lg" id="balanceCredit" >
                                                 </div>
                                         </div>
                                       </form>
