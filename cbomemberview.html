@@ -5,11 +5,16 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/cbo_header.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/authenticate.js"></script>
 <script>
-var transportCredit;
+
+$(document).ready(function() {
+  $.cookie('starttransportcredit', 20);
+  $.cookie('usedtransportcredit', 10);
+});
 
   function getStartValue(obj,type){
     if(type=='meal'){
@@ -19,7 +24,12 @@ var transportCredit;
       return obj.foodstartcredit;
     }
     if(type=="transport"){
-      return obj.transportstartcredit;
+      if(!($.cookie('transportstartcredit') ===undefined)){
+        return $.cookie('transportstartcredit');
+     }else{
+        $.cookie('transportstartcredit', obj.transportstartcredit);
+        return obj.transportstartcredit;
+      }
     }
     if(type=="pest"){
       return obj.peststartcredit;
@@ -42,7 +52,12 @@ var transportCredit;
       return obj.foodusedcredit;
     }
     if(type=="transport"){
-      return obj.transportusedcredit;
+      if(!($.cookie('transportusedcredit') ===undefined)){
+        return $.cookie('transportusedcredit');
+     }else{
+        $.cookie('transportusedcredit', obj.transportusedcredit);
+        return obj.transportusedcredit;
+      }
     }
     if(type=="pest"){
       return obj.pestusedcredit;
@@ -65,15 +80,10 @@ var transportCredit;
           var startCredit = getStartValue(objCredit,creditType);
           var usedCredit = getUsedValue(objCredit,creditType)
           var balanceCredit=startCredit-usedCredit;
-          //alert(startCredit + '-' + usedCredit + '-' + balanceCredit);
           $('#startCredit').val(startCredit);
-          
           $('#usedCredit').val(usedCredit);
-          $('#balanceCredit').val(balanceCredit);
-
-          transportCredit=balanceCredit;
-             
-          $('#totval').val(transportCredit);
+          $('#balanceCredit').val(balanceCredit);             
+          $('#totval').val(balanceCredit);
    });
   }
   
@@ -88,8 +98,8 @@ var transportCredit;
       $("#errMsg").removeClass('d-none');  
 
     }else{
-      transportCredit=transportCredit-1;
-      $('#totval').val(transportCredit);
+      $.cookie('transportusedcredit', parseInt($.cookie('transportusedcredit'))+1);
+      $('#totval').val($.cookie('transportstartcredit') - $.cookie('transportusedcredit') );
       $("#errMsg").addClass('d-none');  
       $("#sucessMsg").removeClass('d-none');  
 
@@ -124,7 +134,7 @@ var transportCredit;
     <div class="container">
             <div class="row">
                     <div class="col-3">
-                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" onclick="javascript:showCredits()"> 
                         <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">INFO</a>
                         <a class="nav-link pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">PHOTO</a>
                         <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">SDH</a>
