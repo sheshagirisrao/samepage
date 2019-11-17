@@ -15,15 +15,15 @@
                 var password =$('#passWord').val();
                 var loginas = $('#loginAs').val();
                 $.getJSON("/data/authenticate.json", function(json) {
-                var objPCP = json.admin.pcpadmin;
+                var objPCP = json.admin.hpadmin;
                 var objCBO = json.admin.cboadmin;
                 var role;
             if(objPCP.username==username && objPCP.password==password){
                 role=objPCP.role; 
-                window.location.href='providerHome.html';
+                window.location.href='healthPlanHome.html';
             }else if(objCBO.username==username && objCBO.password==password){
                     role=objCBO.role;
-                    window.location.href='CBOHome.html'; 
+                    window.location.href='cboHome.html'; 
             }else{
                 $("#errMsg").removeClass('d-none');  
             }
@@ -69,7 +69,7 @@
                             </div>
                             <select class="custom-select" id="loginAs">
                               <option selected>Choose...</option>
-                              <option value="pcp">PCP</option>
+                              <option value="hp">HP</option>
                               <option value="cbo">CBO</option>
                             </select>
                           </div>

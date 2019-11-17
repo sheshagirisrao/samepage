@@ -63,8 +63,10 @@
           var objCredit = json.members[0];
           var startCredit = getStartValue(objCredit,creditType);
           var usedCredit = getUsedValue(objCredit,creditType)
+          if(creditType=='transport'){
+            usedCredit=parseInt(usedCredit)+1;
+          }
           var balanceCredit=startCredit-usedCredit;
-          //alert(startCredit + '-' + usedCredit + '-' + balanceCredit);
           $('#startCredit').val(startCredit);
           $('#usedCredit').val(usedCredit);
           $('#balanceCredit').val(balanceCredit);
@@ -79,7 +81,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#">
+                <a href="healthPlanHome.html">
                     <font class="navbar-brand"> SAMEPAGE</font>
                     <font class="navbar-subbrand">TM</font>
                 </a>
@@ -90,7 +92,7 @@
     <div class="container">
             <div class="row pt-5">
                 <div class="col-md-12">
-                    <h2>Member Details</h2>
+                    <h2>Member Details (Caremanager view)</h2>
                     <hr>
                 </div>
             </div>
@@ -101,6 +103,7 @@
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">INFO</a>
+                        <a class="nav-link pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">PHOTO</a>
                         <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">SDH</a>
                         <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">CREDITS</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">CREDITS USAGE HISTORY</a>
@@ -114,7 +117,7 @@
                                     <div class="form-group row">
                                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">MEMBERID</label>
                                         <div class="col-sm-10">
-                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="XXX-XX-7856">
+                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="2347047760">
                                         </div>
                                       </div>
                                       <div class="form-group row">
@@ -167,8 +170,14 @@
                                         </div>
                                   </form>                        
                         </div>
+                         <div class="tab-pane fade" id="v-pills-photo" role="tabpanel" aria-labelledby="v-pills-photo-tab">
+                            <div class="container">
+                                <div class="col-lg-4 col-sm-6 offset-md-3">
+                                         <img class="img-thumbnail" src="images/60-year-old-man.jpg">
+                                </div>
+                            </div>
+                       </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                            
                                 <div class="container">
                                         <div class="row pt-4 pl-5">
                                             <button class="col-md-5 btn btn-danger offset-md-3">Meals</button>
@@ -292,7 +301,7 @@
                                       <td>Home</td>
                                       <td>Cardiologist</td>
                                       <td>Round</td>
-                                       <td>Sick visit</td>
+                                      <td>Sick visit</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -300,7 +309,7 @@
                         </div>
                         <div class="tab-pane fade" id="v-pills-cbo" role="tabpanel" aria-labelledby="v-pills-cbo-tab">
                             
-                            <button type="button" class="btn btn-warning" onclick="location.href='samepageSurvey.html';">Take Survey </button>
+                            <button type="button" class="btn btn-warning offset-md-4" onclick="location.href='samepageSurvey.html';">Take Survey </button>
                                
                         </div>
                       </div>
@@ -308,5 +317,8 @@
             </div>
     </div>
  </body>
-
+ <script>
+    $('#creditType').val('meal');
+    showCredits();
+    </script>
 </html>

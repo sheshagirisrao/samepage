@@ -1,13 +1,13 @@
 .navbar-brand{
-    color: orange
+    color: black
 }
 
 .navbar-light .navbar-brand{
-        color: orange
+        color: black
 }
 
 .navbar-inverse {
-    background-color:rgb(13, 26, 31);
+    background-color:grey;
     border-color: #080808;
 }
 

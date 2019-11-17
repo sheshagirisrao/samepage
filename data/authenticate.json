@@ -1,9 +1,9 @@
 {
 	"admin": {
-		"pcpadmin": {
-			"username": "pcpadmin",
-			"password": "pcpadmin",
-			"role": "pcp",
+		"hpadmin": {
+			"username": "hpadmin",
+			"password": "hpadmin",
+			"role": "hp",
 			"firstname":""
 		},
 		"cboadmin": {

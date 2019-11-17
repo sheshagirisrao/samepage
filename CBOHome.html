@@ -3,7 +3,7 @@
 <head>
     <title>BootStrap basics</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/cbo_header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -30,7 +30,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#">
+                <a href="samepageLogin.html">
                     <font class="navbar-brand"> SAMEPAGE</font>
                     <font class="navbar-subbrand">TM</font>
                 </a>
@@ -42,7 +42,7 @@
         <div class="row pt-5">
             <div class="col-md-10">
                 <h3>
-                    <p class="text-info">Welcome CBO Admin!</p>
+                    <p class="text-secondary">Welcome CBO Admin!</p>
                 </h3>
             </div>
             <i class="col-md-1 fa fa-bell" style="font-size:30px;color:red"></i>
@@ -63,14 +63,92 @@
                         role="tab" aria-controls="v-pills-home" aria-selected="false">Members List</a>
                     <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
                         role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                    <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
-                        role="tab" aria-controls="v-pills-profile" aria-selected="false">Calendar</a>
                 </div>
             </div>
             <div class="col-10">
+                    <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                aria-labelledby="v-pills-home-tab">
+                                <table class="pt-3 table table-striped col-md-12">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Member Id</th>
+                                            <th scope="col">FirstName</th>
+                                            <th scope="col">LastName</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><a href="cbomemberview.html">2347047760</a></th>
+                                            <td>Smith</td>
+                                            <td>John</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="cbomemberview.html">7341144539</a></th>
+                                            <td>Johnson</td>
+                                            <td>Lucy</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="cbomemberview.html">7593374405</a></th>
+                                            <td>Williams</td>
+                                            <td>Wilma</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="cbomemberview.html">7790509818</a></th>
+                                            <td>Brown</td>
+                                            <td>Patrick</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row"><a href="cbomemberview.html">4514861628</a></th>
+                                            <td>Jones</td>
+                                            <td>James</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="container left">
+                                    <nav aria-label="...">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active" aria-current="page">
+                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>   
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab">
+    
+                            <form action="#">
+                                <div class="form-group row">
+                                    <label for="colFormLabelLg"
+                                        class="col-sm-2 col-form-label col-form-label-md text-secondary">FIRSTNAME</label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Roma">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="colFormLabelLg"
+                                        class="col-sm-2 col-form-label col-form-label-md text-secondary">LASTNAME</label>
+                                    <div class="col-sm-4">
+                                        <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Lincoln" >
+                                    </div>
+                                </div>
+                            </form>
+    
+    
+                        </div>   
+                        </div>
+                    </div>
             </div>
-        </div>
-    </div>
+     </div>
 
 
 

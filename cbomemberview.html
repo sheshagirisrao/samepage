@@ -3,12 +3,13 @@
 <head>
     <title>BootStrap basics</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/cbo_header.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/authenticate.js"></script>
 <script>
+var transportCredit;
 
   function getStartValue(obj,type){
     if(type=='meal'){
@@ -66,11 +67,35 @@
           var balanceCredit=startCredit-usedCredit;
           //alert(startCredit + '-' + usedCredit + '-' + balanceCredit);
           $('#startCredit').val(startCredit);
+          
           $('#usedCredit').val(usedCredit);
           $('#balanceCredit').val(balanceCredit);
-   });
-  }  
 
+          transportCredit=balanceCredit;
+             
+          $('#totval').val(transportCredit);
+   });
+  }
+  
+  function placeRequest(){
+    
+    var from = $('#from').val();
+    var to = $('#to').val();
+    var purpose = $('#purpose').val();
+
+    if(from == "" && to=="" && purpose==""){
+      $("#sucessMsg").addClass('d-none');  
+      $("#errMsg").removeClass('d-none');  
+
+    }else{
+      transportCredit=transportCredit-1;
+      $('#totval').val(transportCredit);
+      $("#errMsg").addClass('d-none');  
+      $("#sucessMsg").removeClass('d-none');  
+
+    } 
+  }
+  
 </script>
 
 </head>
@@ -79,7 +104,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#">
+                <a href="cboHome.html">
                     <font class="navbar-brand"> SAMEPAGE</font>
                     <font class="navbar-subbrand">TM</font>
                 </a>
@@ -90,7 +115,7 @@
     <div class="container">
             <div class="row pt-5">
                 <div class="col-md-12">
-                    <h2>Member Details</h2>
+                    <h2>Member Details (CBO view)</h2>
                     <hr>
                 </div>
             </div>
@@ -101,10 +126,11 @@
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">INFO</a>
+                        <a class="nav-link pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">PHOTO</a>
                         <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">SDH</a>
                         <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">CREDITS</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">CREDITS USAGE HISTORY</a>
-                        <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-cbo" role="tab" aria-controls="v-pills-cbo" aria-selected="false">CBO</a>
+                        <a class="nav-link pt-4" id="v-pills-request-tab" data-toggle="pill" href="#v-pills-request" role="tab" aria-controls="v-pills-request" aria-selected="false">REQUEST ORDER</a>
                       </div>
                     </div>
                     <div class="col-9">
@@ -114,7 +140,7 @@
                                     <div class="form-group row">
                                         <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">MEMBERID</label>
                                         <div class="col-sm-10">
-                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="XXX-XX-7856">
+                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="2347047760">
                                         </div>
                                       </div>
                                       <div class="form-group row">
@@ -167,6 +193,13 @@
                                         </div>
                                   </form>                        
                         </div>
+                        <div class="tab-pane fade" id="v-pills-photo" role="tabpanel" aria-labelledby="v-pills-photo-tab">
+                            <div class="container">
+                                <div class="col-lg-4 col-sm-6 offset-md-3">
+                                         <img class="img-thumbnail" src="images/60-year-old-man.jpg">
+                                </div>
+                            </div>
+                       </div>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                             
                                 <div class="container">
@@ -298,15 +331,59 @@
                               </table>
                         
                         </div>
-                        <div class="tab-pane fade" id="v-pills-cbo" role="tabpanel" aria-labelledby="v-pills-cbo-tab">
-                            
-                            <button type="button" class="btn btn-warning" onclick="location.href='samepageSurvey.html';">Take Survey </button>
-                               
-                        </div>
+                        <div class="tab-pane fade" id="v-pills-request" role="tabpanel" aria-labelledby="v-pills-request-tab">
+                                                      
+                          <div class="alert alert-danger d-none" role="alert" id="errMsg">
+                                Provide all mandatory fields.
+                            </div>
+                            <div class="alert alert-success d-none" role="alert" id="sucessMsg">
+                                Your Ride Request Place Successfully!
+                           </div>
+                            <form>
+                                <div class="form-group row offset-md-2 pt-5">
+                                    <label for="colFormLabelLg" class="col-md-3 col-form-label col-form-label-md text-secondary">AVAILABLE CREDITS</label>
+                                    <div class="col-sm-6">
+                                      <input  class="form-control form-control-lg" id="totval">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row offset-md-2">
+                                    <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary" >PICK UP FROM</label>
+                                    <div class="col-sm-6">
+                                      <input  class="form-control form-control-lg" id="from" value="Home">
+                                    </div>
+                                  </div>
+                                  <div class="form-group row offset-md-2">
+                                          <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary" >DROP OFF AT</label>
+                                          <div class="col-sm-6">
+                                            <input class="form-control form-control-lg" id="to" value="Hospital">
+                                          </div>
+                                  </div>
+                                  <div class="form-group row offset-md-2">
+                                          <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary" >PURPOSE</label>
+                                          <div class="col-sm-6">
+                                            <input  class="form-control form-control-lg" id="purpose" value="Sick">
+                                          </div>
+                                  </div>
+                                  <div class="input-group mb-3 col-6 offset-md-2">
+                                      <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01" >BOOK WITH</label>
+                                      </div>
+                                      <select class="custom-select" id="transportcompany">
+                                        <option value="cdta">CDTA</option>
+                                        <option value="uber">UBER</option>
+                                        <option value="lyft">LYFT</option>
+                                      </select>
+                                    </div>
+                                    <input type="button"  class="btn btn-primary offset-md-3"  value="Submit" onclick="javascript:placeRequest()"/>
+                                </form>
+                          </div>
                       </div>
-                    </div>
+                  </div>
             </div>
-    </div>
+      </div>
  </body>
-
+<script>
+$('#creditType').val('transport');
+showCredits();
+</script>
 </html>

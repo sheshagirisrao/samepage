@@ -21,6 +21,7 @@
         <script>
             function showresults(){
                 $("#search_results").removeClass('d-none');  
+                return false;
             }    
         </script>
 
@@ -30,7 +31,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#">
+                    <a href="samepageLogin.html">
                     <font class="navbar-brand"> SAMEPAGE</font>
                     <font class="navbar-subbrand">TM</font>
                 </a>
@@ -42,7 +43,7 @@
         <div class="row pt-5">
             <div class="col-md-10">
                 <h3>
-                    <p class="text-info">Welcome Mark!</p>
+                    <p class="text-secondary">Welcome HP Caremanager!</p>
                 </h3>
             </div>
             <i class="col-md-1 fa fa-bell" style="font-size:30px;color:red"></i>
@@ -83,34 +84,29 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">XXX-XX-1234</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
+                                    <th scope="row"><a href="hpmemberview.html">2347047760</a></th>
+                                    <td>Smith</td>
+                                    <td>John</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">XXX-XX-7856</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
+                                    <th scope="row"><a href="hpmemberview.html">7341144539</a></th>
+                                    <td>Johnson</td>
+                                    <td>Lucy</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">XXX-XX-9087</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
+                                    <th scope="row"><a href="hpmemberview.html">7593374405</a></th>
+                                    <td>Williams</td>
+                                    <td>Wilma</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">XXX-XX-3287</th>
-                                    <td>Steven</td>
-                                    <td>Hammond</td>
+                                    <th scope="row"><a href="hpmemberview.html">7790509818</a></th>
+                                    <td>Brown</td>
+                                    <td>Patrick</td>
                                 </tr>
                                 <tr>
-                                    <th scope="row">XXX-XX-3785</th>
-                                    <td>Larry</td>
-                                    <td>Patron</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">XXX-XX-2860</th>
-                                    <td>Tom</td>
-                                    <td>Sawyer</td>
+                                    <th scope="row"><a href="hpmemberview.html">4514861628</a></th>
+                                    <td>Jones</td>
+                                    <td>James</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -139,44 +135,15 @@
                             <div class="form-group row">
                                 <label for="colFormLabelLg"
                                     class="col-sm-2 col-form-label col-form-label-md text-secondary">FIRSTNAME</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                <div class="col-sm-4">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Catherine">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label for="colFormLabelLg"
                                     class="col-sm-2 col-form-label col-form-label-md text-secondary">LASTNAME</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">EMAIL</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">ADDRESS</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">PHONE</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="colFormLabelLg"
-                                    class="col-sm-2 col-form-label col-form-label-md text-secondary">HOSPITAL
-                                    NAME</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
+                                <div class="col-sm-4">
+                                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Henders" >
                                 </div>
                             </div>
                         </form>
@@ -282,8 +249,8 @@
                                     <input type="email" class="form-control form-control-lg" id="colFormLabelLg">
                                 </div>
                             </div>
-                            <button  class="btn btn-primary offset-md-3"  onclick="javascript:showresults()">Search</button>
-                            <button  class="btn btn-primary" >Reset</button>
+                            <input type="button"  class="btn btn-primary offset-md-3"  value="Search" onclick="javascript:showresults()"/>
+                            <input type="button" class="btn btn-primary" value="Reset"/>
                             </form>
                             <div id="search_results" class="d-none">
                                 <hr class="offset-md-1">
@@ -298,9 +265,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row"><a href="providerInfo.html">XXX-XX-7856</a></th>
-                                            <td><font class="font-weight-light">Jacob</font></td>
-                                            <td><font class="font-weight-light">Thornton</font></td>
+                                            <th scope="row"><a href="hpmemberview.html">2347047760</a></th>
+                                            <td><font class="font-weight-light">Smith</font></td>
+                                            <td><font class="font-weight-light">John</font></td>
                                         </tr>
                                     </tbody>
                                 </table>
