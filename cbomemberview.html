@@ -136,118 +136,104 @@ $(document).ready(function() {
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" onclick="javascript:showCredits()"> 
                         <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">INFO</a>
-                        <a class="nav-link pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">PHOTO</a>
-                        <a class="nav-link pt-4" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">SDH</a>
-                        <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">CREDITS</a>
-                        <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">CREDITS USAGE HISTORY</a>
-                        <a class="nav-link pt-4" id="v-pills-request-tab" data-toggle="pill" href="#v-pills-request" role="tab" aria-controls="v-pills-request" aria-selected="false">REQUEST ORDER</a>
+                        <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">BENEFITS</a>
+                        <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">BENEFITS USAGE HISTORY</a>
+                        <a class="nav-link pt-4" id="v-pills-request-tab" data-toggle="pill" href="#v-pills-request" role="tab" aria-controls="v-pills-request" aria-selected="false">BOOKING</a>
                       </div>
                     </div>
                     <div class="col-9">
                       <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                <form>
-                                    <div class="form-group row">
-                                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">MEMBERID</label>
-                                        <div class="col-sm-10">
-                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="2347047760">
+                          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-md-3">
+                                           <img class="img-thumbnail" src="images/60-year-old-man.jpg">
+                                  </div>
+                                  <div class="col-md-9">
+                                      <div class="row">
+                                        <div class="col-md-8">
+                                            <label class="text-secondary font-weight-bold">MEMBERID : 2347047760</label>
                                         </div>
                                       </div>
-                                      <div class="form-group row">
-                                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">AGE</label>
-                                        <div class="col-sm-10">
-                                          <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="78">
-                                        </div>
+                                      <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">AGE : 78</label>
+                                          </div>
                                       </div>
-                                        <div class="form-group row">
-                                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">PHONE</label>
-                                          <div class="col-sm-10">
-                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="518-231-9000">
+                                      <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">PHONE : 518-231-9000</label>
                                           </div>
-                                        </div>
-                                        <div class="form-group row">
-                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">EMAIL</label>
-                                                <div class="col-sm-10">
-                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="John.Smith@gmail.com">
-                                                </div>
-                                        </div>
-                                        <div class="form-group row">
-                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">ADDRESS</label>
-                                                <div class="col-sm-10">
-                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="125 Ruby Ln,Apt # 301, Albany NY 12204">
-                                                </div>
-                                        </div>
-                                        <div class="form-group row">
-                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">PLAN ID</label>
-                                                <div class="col-sm-10">
-                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="H8000_002">
-                                                </div>
-                                        </div>
-                                        <div class="form-group row">
-                                                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">PCP</label>
-                                                <div class="col-sm-10">
-                                                  <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Dr.Alec Binder,Community Care Physicians, Ph:518-299-1001" >
-                                                </div>
-                                        </div>
-                                        <div class="form-group row">
-                                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">DISABLED</label>
-                                          <div class="col-sm-10">
-                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="Yes" >
+                                      </div>
+                                      <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">EMAIL : John.Smith@gmail.com</label>
                                           </div>
-                                        </div>
-                                        <div class="form-group row">
-                                          <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary">DUAL</label>
-                                          <div class="col-sm-10">
-                                            <input type="email" class="form-control form-control-lg" id="colFormLabelLg" value="No" >
-                                        </div>
-                                        </div>
-                                  </form>                        
-                        </div>
-                        <div class="tab-pane fade" id="v-pills-photo" role="tabpanel" aria-labelledby="v-pills-photo-tab">
-                            <div class="container">
-                                <div class="col-lg-4 col-sm-6 offset-md-3">
-                                         <img class="img-thumbnail" src="images/60-year-old-man.jpg">
+                                       </div>
+                                       <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">ADDRESS : 125 Ruby Ln,Apt # 301, Albany NY 12204</label>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">PLAN ID : H8000_002</label>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">PCP : Dr.Alec Binder,Community Care Physicians, Ph:518-299-1001</label>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">DISABLED : Yes</label>
+                                          </div>
+                                       </div>
+                                       <div class="row">
+                                          <div class="col-md-8">
+                                              <label class="text-secondary font-weight-bold">DUAL : No</label>
+                                          </div>
+                                       </div>
+                                  </div>
                                 </div>
-                            </div>
-                       </div>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                            
-                                <div class="container">
-                                        <div class="row pt-4 pl-5">
-                                            <button class="col-md-5 btn btn-danger offset-md-3">Meals</button>
-                                         </div>   
-                                         <div class="row pt-4 pl-5">
-                                                <button class="col-md-5 btn btn-success offset-md-3">Food & Produce</button>
-                                         </div> 
-                                         <div class="row pt-4 pl-5">
-                                                <button class="col-md-5 btn btn-danger offset-md-3">Transportation</button>
-                                         </div> 
-        
-                                         <div class="row pt-4 pl-5">
-                                                <button class="col-md-5 btn btn-danger offset-md-3">Pest Control</button>
-                                         </div> 
-        
-                                         <div class="row pt-4 pl-5">
-                                                <button class="col-md-5 btn btn-success offset-md-3">Indoor Air Quality</button>
-                                         </div> 
-        
-                                         <div class="row pt-4 pl-5">
-                                                <button class="col-md-5 btn btn-danger offset-md-3">Social Needs</button>
-                                         </div> 
-
-                                         <div class="row pt-4 pl-5">
-                                          <button class="col-md-5 btn btn-danger offset-md-3">Home Modification</button>
-                                        </div> 
-                                    </div>
-
-
-                        </div>
+                                <hr>
+                                <div class="row">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                            <th class="text-success">Meal</th>
+                                            <th class="text-danger">Food & Produce</th>
+                                            <th class="text-success">Transport</th>
+                                            <th class="text-success">Indoor Air Quality</th>
+                                            <th class="text-danger">Pest Control</th>
+                                            <th class="text-danger">Social Needs</th>
+                                            <th class="text-danger">Home Modification</th>
+  
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td class="text-success">Yes</th>
+                                            <td class="text-danger">No</td>
+                                            <td class="text-success">Yes</td>
+                                            <td class="text-success">Yes</td>
+                                            <td class="text-danger">No</td>
+                                            <td class="text-danger">No</td>
+                                            <td class="text-danger">No</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                      </table>
+                                </div>
+                              </div>
+                         </div>
                         <div class="tab-pane fade container" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                             
                                 <form>
                                       <div class="input-group mb-3 col-6 offset-md-2">
                                           <div class="input-group-prepend">
-                                            <label class="input-group-text" for="inputGroupSelect01">Credit Type</label>
+                                            <label class="input-group-text" for="inputGroupSelect01">Choose Benefit</label>
                                           </div>
                                           <select class="custom-select" id="creditType" onchange="javascript:showCredits()">
                                             <option selected>Choose...</option>
@@ -284,7 +270,7 @@ $(document).ready(function() {
                             
                             <div class="input-group mb-3 col-6 offset-md-2">
                                 <div class="input-group-prepend">
-                                  <label class="input-group-text" for="inputGroupSelect01">Credit Type</label>
+                                  <label class="input-group-text" for="inputGroupSelect01">Choose Benefit</label>
                                 </div>
                                 <select class="custom-select" id="inputGroupSelect01">
                                   <option selected>Transportation</option>
