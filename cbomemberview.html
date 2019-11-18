@@ -103,7 +103,14 @@ $(document).ready(function() {
       $("#errMsg").addClass('d-none');  
       $("#sucessMsg").removeClass('d-none');  
 
-    } 
+    }
+    if(($.cookie('notification')===undefined)){
+      $.cookie('notification', 1);
+    }else{
+      var value=$.cookie('notification');
+      $.cookie('notification', parseInt(value)+1);
+    }
+ 
   }
   
 </script>
