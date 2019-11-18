@@ -5,3 +5,16 @@ services:
 
 before_install:
     - docker-compose up
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "samepage"
+    env: "Samepage-env"
+    bucket: "elasticbeanstalk-us-east-1-400418324967"
+    bucket_path: "samepage"
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+s   secret_access_key: $AWS_SECRET_KEY
