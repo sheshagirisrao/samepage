@@ -1,0 +1,9 @@
+{
+    "dependencies":{
+        "connect": "*",
+        "serve-static":"*"
+    },
+    "scripts": {
+        "start": "node index.js"
+    }
+}

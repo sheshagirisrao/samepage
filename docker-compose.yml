@@ -1,0 +1,7 @@
+version: '3'
+services:
+  samepage:
+    build: 
+      context: .
+    ports:
+      - '4000:8080'
