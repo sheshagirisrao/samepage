@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>BootStrap basics</title>
+    <title>SamePage TM</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -82,7 +82,17 @@
           $('#usedCredit').val(usedCredit);
           $('#balanceCredit').val(balanceCredit);
    });
-  }  
+  }
+  
+  function assignCBO(cbo,id){
+    if(id=='e'){
+      $("#mealModelClose").click();
+      $("e").html("<a href=\"#\" class=\"text-success\" data-toggle=\"modal\" data-target=\"#foodModal\" onclick=\"javascript:notification()\">"+cbo+"</a>");
+    }else{
+      $("f").html("<a href=\"#\" class=\"text-success\" data-toggle=\"modal\" data-target=\"#foodModal\" onclick=\"javascript:notification()\">"+cbo+"</a>");
+      $("#transportModelClose").click();
+    }
+  }
 
 </script>
 
@@ -113,7 +123,7 @@
             <div class="row">
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">INFO</a>
+                        <a class="nav-link active pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">INFO</a>
                         <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">BENEFITS</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">BENEFITS USAGE HISTORY</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-cbo" role="tab" aria-controls="v-pills-cbo" aria-selected="false">CBO</a>
@@ -180,12 +190,11 @@
                                   <table class="table table-bordered">
                                       <thead>
                                         <tr>
-                                          
                                           <th class="text-dark font-weight-bold">Benefits</th>
                                           <th class="text-success">Meal</th>
                                           <th class="text-danger">Food & Produce</th>
                                           <th class="text-success">Transport</th>
-                                          <th class="text-success">Indoor Air Quality</th>
+                                          <th class="text-danger">Indoor Air Quality</th>
                                           <th class="text-danger">Pest Control</th>
                                           <th class="text-danger">Social Needs</th>
                                           <th class="text-danger">Home Modification</th>
@@ -198,17 +207,17 @@
                                           <td class="text-success">Yes</th>
                                           <td class="text-danger">No</td>
                                           <td class="text-success">Yes</td>
-                                          <td class="text-success">Yes</td>
+                                          <td class="text-danger">No</td>
                                           <td class="text-danger">No</td>
                                           <td class="text-danger">No</td>
                                           <td class="text-danger">No</td>
                                         </tr>
                                         <tr>
                                             <td class="text-dark font-weight-bold">CBO</th>
-                                            <td><d><a href="#" class="text-success" data-toggle="modal" data-target="#exampleModal">Assign CBO</a></d></td>
+                                            <td><e><a href="#" class="text-success" data-toggle="modal" data-target="#foodModal" onclick="javascript:notification()">Assign CBO</a></e></td>
                                             <td><d><a href="#" class="text-danger">N/A</a></d></td>
-                                            <td><d><a href="#" class="text-success">CDTA ACCESS</a></d></td>
-                                            <td><d><a href="#" class="text-success">Assign CBO</a></d></td>
+                                            <td><f><a href="#" class="text-success" data-toggle="modal" data-target="#transportModal" onclick="javascript:notification()">Assign CBO</a></f></td>
+                                            <td><d><a href="#" class="text-danger">N/A</a></d></td>
                                             <td><d><a href="#" class="text-danger">N/A</a></d></td>
                                             <td><d><a href="#" class="text-danger">N/A</a></d></td>
                                             <td><d><a href="#" class="text-danger">N/A</a></d></td>
@@ -217,7 +226,8 @@
                                       </tbody>
                                     </table>
                               </div>
-                              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                              <div class="modal fade" id="foodModal" tabindex="-1" role="dialog" aria-labelledby="foodModalLabel" aria-hidden="true">
                                   <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body">
@@ -225,27 +235,68 @@
                                                 <table class="table">
                                                     <thead>
                                                       <tr>
-                                                        <th scope="col" class="text-info">SELECT CBO NAME FROM LIST</th>
+                                                        <th scope="col" class="text-info">ASSIGN MEAL CBO FROM LIST</th>
                                                       </tr>
                                                     </thead>
                                                     <tbody>
                                                       <tr>
-                                                        <th scope="row">Food Pantries for the Capital District</th>
+                                                        <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Food Pantries for the Capital District','e')">Food Pantries for the Capital District</button></th>
                                                       </tr>
                                                       <tr>
-                                                        <th scope="row">Schenectady Inner City Ministry</th>
+                                                        <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Schenectady Inner City Ministry','e')">Schenectady Inner City Ministry</button></th>
                                                       </tr>
                                                       <tr>
-                                                        <th scope="row">St. Clements Soup Kitchen & Food Pantry</th>
+                                                        <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('St. Clements Soup Kitchen & Food Pantry','e')">St. Clements Soup Kitchen & Food Pantry</button></th>
+                                                      </tr>
+                                                      <tr>
+                                                          <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Assign CBO','e')">Assign CBO</button></th>
                                                       </tr>
                                                     </tbody>
                                                   </table>
                                             </div>
                                           </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary d-none" data-dismiss="modal" id="mealModelClose">Close</button>
+                                          </div>
                                   </div>
                                 </div>
                             </div>
+                            <div class="modal fade" id="transportModal" tabindex="-1" role="dialog" aria-labelledby="transportModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                      <div class="modal-body">
+                                          <div class="container-fluid">
+                                              <table class="table">
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col" class="text-dark">ASSIGN TRANSPORT CBO FROM LIST</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                        <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('CDTA ACCESS','f')">CDTA ACCESS</th></button>
+                                                    </tr>
+                                                    <tr>
+                                                      <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Catholic Charities Senior & Caregiver','f')">Catholic Charities Senior & Caregiver</th></button>
+                                                    </tr>
+                                                    <tr>
+                                                      <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Ny Connects Rennselaer','f')">Ny Connects Rennselaer</th></button>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Assign CBO','f')">Assign CBO</th></button>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary d-none" data-dismiss="modal" id="transportModelClose">Close</button>
+                                        </div>
+                                </div>
+                              </div>
+                          </div>
                        </div>
+                          </div> 
                         <div class="tab-pane fade container" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                             
                                 <form>
@@ -307,14 +358,14 @@
                                 </thead>
                                 <tbody>
                                   <tr>
-                                    <th scope="row">2/1/2019</th>
+                                    <th scope="row">8/1/2019</th>
                                     <td>Home</td>
                                     <td>PCP Office</td>
                                     <td>Round</td>
                                     <td>Annual Check up</td>
                                   </tr>
                                   <tr>
-                                    <th scope="row">3/2/2019</th>
+                                    <th scope="row">6/7/2019</th>
                                     <td>Home</td>
                                     <td>Grocer</td>
                                     <td>Round</td>
@@ -328,14 +379,14 @@
                                     <td>Grocery pick up</td>
                                   </tr>
                                   <tr>
-                                      <th scope="row">6/7/2019</th>
+                                      <th scope="row">3/2/2019</th>
                                       <td>Home</td>
                                       <td>Walgreens</td>
                                       <td>Round</td>
                                       <td>Meds Pick up</td>
                                     </tr>
                                   <tr>
-                                      <th scope="row">8/1/2019</th>
+                                      <th scope="row">2/1/2019</th>
                                       <td>Home</td>
                                       <td>Cardiologist</td>
                                       <td>Round</td>
