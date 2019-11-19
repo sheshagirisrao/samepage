@@ -132,7 +132,7 @@ $(document).ready(function() {
     <div class="container">
             <div class="row pt-5">
                 <div class="col-md-12">
-                    <h2>Member Details (CBO view)</h2>
+                    <h2>Roma Lincoln - Member view</h2>
                     <hr>
                 </div>
             </div>
@@ -142,7 +142,7 @@ $(document).ready(function() {
             <div class="row">
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical" onclick="javascript:showCredits()"> 
-                        <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">INFO</a>
+                        <a class="nav-link active pt-4" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">MEMBER PROFILE</a>
                         <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">BENEFITS</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">BENEFITS USAGE HISTORY</a>
                         <a class="nav-link pt-4" id="v-pills-request-tab" data-toggle="pill" href="#v-pills-request" role="tab" aria-controls="v-pills-request" aria-selected="false">BOOKING</a>
@@ -338,29 +338,31 @@ $(document).ready(function() {
                            </div>
                             <form>
                                 <div class="form-group row offset-md-2 pt-5">
-                                    <label for="colFormLabelLg" class="col-md-3 col-form-label col-form-label-md text-secondary">AVAILABLE CREDITS</label>
-                                    <div class="col-sm-6">
-                                      <input  class="form-control form-control-lg" id="totval">
+                                    <label for="colFormLabelLg" class="col-md-4 col-form-label col-form-label-md text-secondary">CREDITS AVAILABLE</label>
+                                    <div class="col-sm-2">
+                                      <input  class="form-control form-control-lg" id="totval" disabled>
                                     </div>
                                   </div>
-                                  <div class="form-group row offset-md-2">
-                                    <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary" >PICK UP FROM</label>
-                                    <div class="col-sm-6">
-                                      <input  class="form-control form-control-lg" id="from" value="Home">
+                                    <div class="input-group mb-3 col-6 offset-md-2">
+                                      <div class="input-group-prepend">
+                                        <label class="input-group-text" for="inputGroupSelect01" >STARTING LOCATION</label>
+                                      </div>
+                                      <select class="custom-select" id="transportcompany">
+                                        <option value="ruby">125 Ruby Ln, Apt #301, Albany, NY 12204</option>
+                                        <option value="community">Community Care Physicians</option>
+                                        <option value="walgreens">Walgreens Albany</option>
+                                      </select>
                                     </div>
-                                  </div>
-                                  <div class="form-group row offset-md-2">
-                                          <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary" >DROP OFF AT</label>
-                                          <div class="col-sm-6">
-                                            <input class="form-control form-control-lg" id="to" value="Hospital">
-                                          </div>
-                                  </div>
-                                  <div class="form-group row offset-md-2">
-                                          <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary" >PURPOSE</label>
-                                          <div class="col-sm-6">
-                                            <input  class="form-control form-control-lg" id="purpose" value="Sick">
-                                          </div>
-                                  </div>
+                                    <div class="input-group mb-3 col-6 offset-md-2">
+                                        <div class="input-group-prepend">
+                                          <label class="input-group-text" for="inputGroupSelect01" >DROP OFF LOCATION</label>
+                                        </div>
+                                        <select class="custom-select" id="transportcompany">
+                                          <option value="ruby">Home - 125 Ruby Ln, Apt #301, Albany, NY 12204</option>
+                                          <option value="community"> Community Care -  Physicians 23 Hackett Boulevard Albany NY 12208</option>
+                                          <option value="walgreens">Walgreens - 581 Central Ave, Albany NY 12206</option>
+                                        </select>
+                                      </div>
                                   <div class="input-group mb-3 col-6 offset-md-2">
                                       <div class="input-group-prepend">
                                         <label class="input-group-text" for="inputGroupSelect01" >BOOK WITH</label>
@@ -371,6 +373,12 @@ $(document).ready(function() {
                                         <option value="lyft">LYFT</option>
                                       </select>
                                     </div>
+                                    <div class="form-group row offset-md-2">
+                                        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-md text-secondary" >PURPOSE</label>
+                                        <div class="col-sm-5">
+                                          <input  class="form-control form-control-lg" id="purpose" value="Regular Doctor visit">
+                                        </div>
+                                  </div>
                                     <input type="button"  class="btn btn-primary offset-md-3"  value="Submit" onclick="javascript:placeRequest()"/>
                                 </form>
                           </div>

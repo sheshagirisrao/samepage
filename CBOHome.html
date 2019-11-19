@@ -7,25 +7,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="js/authenticate.js"></script>
 
         <script>
             function showresults(){
                 $("#search_results").removeClass('d-none');  
-            }    
+            }   
+            function loadMembersList(){
+            var firstname,lastname,memberid,response;
+            $.getJSON("/data/demographic_info.json", function(json) { 
+                for (var i=0;i<json.members.length;i++){
+                    firstname=json.members[i].firstName;
+                    lastname=json.members[i].lastName;
+                    memberid=json.members[i].memberId;
+                    if(($.cookie('actionTransportNotify')===undefined && memberid=="2347047760")){
+                    }else if((($.cookie('actionTransportNotify')==="added" || $.cookie('actionTransportNotify')==="add")&& memberid=="2347047760")){
+                        response+="<tr><th scope=\"row\"><a href=\"cbomemberview.html\">"+memberid+"</a></th><td>"+firstname+"</td><td>"+lastname+"</td></tr>";
+                        $.cookie('actionTransportNotify',"added");
+                    }else if((($.cookie('actionTransportNotify')==="removed" || $.cookie('actionTransportNotify')==="remove") && memberid=="2347047760")){
+                        $.cookie('actionTransportNotify',"removed");
+                    }else{
+                        response+="<tr><th scope=\"row\"><a href=\"cbomemberview.html\">"+memberid+"</a></th><td>"+firstname+"</td><td>"+lastname+"</td></tr>";
+                    }
+                }
+                $("tbody").html(response);
+              });
+            }
+
+            function notification(){
+                if($.cookie('actionTransportNotify')===undefined || $.cookie('actionTransportNotify')== "added" || $.cookie('actionTransportNotify')== "removed"){  
+                    $("c").text('');
+                }
+            }
+            function postClose(){
+                $('#notifyButton').removeAttr('data-target');
+            }
         </script>
-
 </head>
-
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -42,11 +64,25 @@
         <div class="row pt-5">
             <div class="col-md-10">
                 <h3>
-                    <p class="text-secondary">Welcome CBO Admin!</p>
+                    <p class="text-secondary">Welcome Roma Lincoln!</p>
                 </h3>
             </div>
-            <i class="col-md-1 fa fa-bell" style="font-size:30px;color:red"></i>
-            <i class="col-md-1 fa fa-user fa-2x" aria-hidden="true"></i>
+            <button type="button" class="btn btn-link" id="notifyButton" data-toggle="modal" data-target="#notifytransportModal" onclick="javascript:notification()">
+                    <i class="fa fa-bell" style="font-size:30px;color:red"></i> <span id="spanId" class="badge badge-light"><c></c></span>
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="notifytransportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                                <f></f>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal"id="transportModelClose" onclick="javascript:postClose()">Close</button>
+                        </div>
+                      </div>
+                    </div>
+            </div>
 
         </div>
     </div class="row">
@@ -78,31 +114,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th scope="row"><a href="cbomemberview.html">2347047760</a></th>
-                                            <td>Smith</td>
-                                            <td>John</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="cbomemberview.html">7341144539</a></th>
-                                            <td>Johnson</td>
-                                            <td>Lucy</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="cbomemberview.html">7593374405</a></th>
-                                            <td>Williams</td>
-                                            <td>Wilma</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="cbomemberview.html">7790509818</a></th>
-                                            <td>Brown</td>
-                                            <td>Patrick</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row"><a href="cbomemberview.html">4514861628</a></th>
-                                            <td>Jones</td>
-                                            <td>James</td>
-                                        </tr>
                                     </tbody>
                                 </table>
                                 <div class="container left">
@@ -111,10 +122,8 @@
                                             <li class="page-item disabled">
                                                 <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                                             </li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item active" aria-current="page">
-                                                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                                            </li>
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"> <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a> </li>
                                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                                             <li class="page-item">
                                                 <a class="page-link" href="#">Next</a>
@@ -154,5 +163,18 @@
 
 
 </body>
-
+    <script>
+        if($.cookie('actionTransportNotify')===undefined || $.cookie('actionTransportNotify')== "added" || $.cookie('actionTransportNotify')== "removed"){  
+            $("c").text('');
+            $('#notifyButton').removeAttr('data-target');
+        }else{
+            $("c").text('1'); 
+           if($.cookie('actionTransportNotify')==="add"){
+            $("f").text('John Smith has been added to your organization');
+           }else{
+            $("f").text('John Smith has been removed from your organization');
+           }
+         }
+       loadMembersList();
+    </script>
 </html>

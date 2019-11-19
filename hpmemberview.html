@@ -86,10 +86,24 @@
   
   function assignCBO(cbo,id){
     if(id=='e'){
+      if(cbo=="Assign CBO"){
+        $.cookie('actionFoodNotify', "remove");
+      }else{
+        $.cookie('actionFoodNotify', "add");
+      }
       $("#mealModelClose").click();
       $("e").html("<a href=\"#\" class=\"text-success\" data-toggle=\"modal\" data-target=\"#foodModal\" onclick=\"javascript:notification()\">"+cbo+"</a>");
     }else{
-      $("f").html("<a href=\"#\" class=\"text-success\" data-toggle=\"modal\" data-target=\"#foodModal\" onclick=\"javascript:notification()\">"+cbo+"</a>");
+      if(cbo=="Assign CBO"){
+        $.cookie('actionTransportNotify', "remove");
+        $(".replace").html("");
+      }else{
+        $.cookie('actionTransportNotify', "add");
+        $.cookie('actionTransportName', cbo);
+        var value=  "<th scope=\"row\"><button class=\"btn btn-link\" onclick=\"javascript:assignCBO('Assign CBO','f')\">Remove Assignment</button></th>";
+        $(".replace").append(value);
+      }
+      $("f").html("<a href=\"#\" class=\"text-success\" data-toggle=\"modal\" data-target=\"#transportModal\" onclick=\"javascript:notification()\">"+cbo+"</a>");
       $("#transportModelClose").click();
     }
   }
@@ -113,7 +127,7 @@
     <div class="container">
             <div class="row pt-5">
                 <div class="col-md-12">
-                    <h2>Member Details (Caremanager view)</h2>
+                    <h2>Catherine Henders RN - Member view</h2>
                     <hr>
                 </div>
             </div>
@@ -123,7 +137,7 @@
             <div class="row">
                     <div class="col-3">
                       <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">INFO</a>
+                        <a class="nav-link active pt-4" id="v-pills-photo-tab" data-toggle="pill" href="#v-pills-photo" role="tab" aria-controls="v-pills-photo" aria-selected="true">MEMBER PROFILE</a>
                         <a class="nav-link pt-4" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">BENEFITS</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">BENEFITS USAGE HISTORY</a>
                         <a class="nav-link pt-4" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-cbo" role="tab" aria-controls="v-pills-cbo" aria-selected="false">CBO</a>
@@ -249,7 +263,7 @@
                                                         <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('St. Clements Soup Kitchen & Food Pantry','e')">St. Clements Soup Kitchen & Food Pantry</button></th>
                                                       </tr>
                                                       <tr>
-                                                          <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Assign CBO','e')">Assign CBO</button></th>
+                                                          <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Assign CBO','e')">Remove Assignment</button></th>
                                                       </tr>
                                                     </tbody>
                                                   </table>
@@ -282,8 +296,7 @@
                                                     <tr>
                                                       <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Ny Connects Rennselaer','f')">Ny Connects Rennselaer</th></button>
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row"><button class="btn btn-link" onclick="javascript:assignCBO('Assign CBO','f')">Assign CBO</th></button>
+                                                    <tr class="replace">
                                                     </tr>
                                                   </tbody>
                                                 </table>
@@ -316,19 +329,19 @@
                                           </select>
                                         </div>
                                         <div class="form-group row pt-5 offset-md-2">
-                                          <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">START CREDIT</label>
+                                          <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">STARTING CREDITS</label>
                                           <div class="col-sm-3">
                                             <input  class="form-control form-control-lg" id="startCredit" >
                                           </div>
                                         </div>
                                         <div class="form-group row offset-md-2">
-                                                <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">USED CREDIT</label>
+                                                <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">CREDITS USED</label>
                                                 <div class="col-sm-3">
                                                   <input class="form-control form-control-lg" id="usedCredit">
                                                 </div>
                                         </div>
                                         <div class="form-group row offset-md-2">
-                                                <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">BALANCE CREDIT</label>
+                                                <label for="colFormLabelLg" class="col-sm-3 col-form-label col-form-label-md text-secondary">CREDIT BALANCE</label>
                                                 <div class="col-sm-3">
                                                   <input  class="form-control form-control-lg" id="balanceCredit" >
                                                 </div>
@@ -409,5 +422,12 @@
  <script>
     $('#creditType').val('meal');
     showCredits();
+    if($.cookie('actionTransportNotify')===undefined || $.cookie('actionTransportNotify')== "remove" || $.cookie('actionTransportNotify')== "removed" ){ 
+    }else{
+     var name= $.cookie('actionTransportName');
+     var value= "<th scope=\"row\"><button class=\"btn btn-link\" onclick=\"javascript:assignCBO('Assign CBO','f')\">Remove Assignment</button></th>";
+      $(".replace").append(value);
+      $("f").html("<a href=\"#\" class=\"text-success\" data-toggle=\"modal\" data-target=\"#transportModal\" onclick=\"javascript:notification()\">"+name+"</a>");
+    }
     </script>
 </html>

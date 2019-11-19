@@ -1,6 +1,7 @@
-FROM node:alpine
+FROM node:alpine as builder
 WORKDIR '/app'
-COPY ./ ./
+COPY package.json .
 RUN npm install
-EXPOSE 80
-CMD ["npm","start"]
+COPY . .
+
+FROM ngnix

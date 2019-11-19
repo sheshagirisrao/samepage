@@ -33,6 +33,11 @@
                             $("c").text(parseInt(value)-1);
                         }
                 }
+            }
+            function postClose(){
+                if(($.cookie('notification')===undefined || $.cookie('notification')== "0")){ 
+                    $('#hpnotification').removeAttr('data-target');
+                }
             } 
         </script>
 
@@ -54,10 +59,10 @@
         <div class="row pt-5">
             <div class="col-md-10">
                 <h3>
-                    <p class="text-secondary">Welcome HP Caremanager!</p>
+                    <p class="text-secondary">Welcome Catherine Henders RN!</p>
                 </h3>
             </div>
-            <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal" onclick="javascript:notification()">
+            <button type="button" class="btn btn-link" data-toggle="modal" id="hpnotification" data-target="#exampleModal" onclick="javascript:notification()">
                 <i class="fa fa-bell" style="font-size:30px;color:red"></i> <span id="spanId" class="badge badge-light"><c></c></span>
             </button>
                   <!-- Modal -->
@@ -68,7 +73,7 @@
                              John Smith (#2347047760) has booked a trip using transport credit.
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="javascript:postClose()">Close</button>
                         </div>
                       </div>
                     </div>
@@ -107,31 +112,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row"><a href="hpmemberview.html">2347047760</a></th>
-                                    <td>Smith</td>
-                                    <td>John</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="hpmemberview.html">7341144539</a></th>
-                                    <td>Johnson</td>
-                                    <td>Lucy</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="hpmemberview.html">7593374405</a></th>
-                                    <td>Williams</td>
-                                    <td>Wilma</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="hpmemberview.html">7790509818</a></th>
-                                    <td>Brown</td>
-                                    <td>Patrick</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row"><a href="hpmemberview.html">4514861628</a></th>
-                                    <td>Jones</td>
-                                    <td>James</td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                         <div class="container left">
@@ -323,9 +304,23 @@
 </body>
 <script>
   if(($.cookie('notification')===undefined || $.cookie('notification')== "0")){  
-    $("c").text('');
-  }else{
-    $("c").text($.cookie('notification'));
-  }
+        $("c").text('');
+        $('#hpnotification').removeAttr('data-target');
+    }else{
+        $("c").text($.cookie('notification')); 
+   }
+        $(document).ready(function() {
+            var firstname,lastname,memberid,response;
+            $.getJSON("/data/demographic_info.json", function(json) { 
+                for (var i=0;i<json.members.length;i++){
+                    firstname=json.members[i].firstName;
+                    lastname=json.members[i].lastName;
+                    memberid=json.members[i].memberId;
+                    response+="<tr><th scope=\"row\"><a href=\"hpmemberview.html\">"+memberid+"</a></th><td>"+firstname+"</td><td>"+lastname+"</td></tr>";     
+                }
+                $("tbody").html(response);
+            });
+        });
+
 </script>
 </html>

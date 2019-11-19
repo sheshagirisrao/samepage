@@ -9,7 +9,13 @@
 		"cboadmin": {
 			"username": "cboadmin",
 			"password": "cboadmin",
-			"role": "cbo",
+			"role": "cboadmin",
+			"firstname":""
+		},
+		"cbomeal":{
+			"username": "cbotransport",
+			"password": "cbotransport",
+			"role": "cbotransport",
 			"firstname":""
 		}
 	}

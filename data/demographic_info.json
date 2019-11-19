@@ -2,40 +2,40 @@
   "members":[
     {
       "memberId":"2347047760",
-      "firstName":"SMITH",
-      "lastName":"John",
+      "firstName":"John",
+      "lastName":"Smith",
       "sex":"M",
       "dob":"6/30/1941",
       "zipcode":"60061"
     },
     {
         "memberId":"7341144539",
-        "firstName":"JOHNSON",
-        "lastName":"Lucy",
+        "firstName":"Lucy",
+        "lastName":"Johnson",
         "sex":"M",
         "dob":"6/30/1942",
         "zipcode":"60061"  
     },
     {
       "memberId":"7593374405",
-      "firstName":"Williams",
-      "lastName":"Wilma",
+      "firstName":"Wilma",
+      "lastName":"Williams",
       "sex":"M",
       "dob":"6/30/1942",
       "zipcode":"60061"  
     },
     {
       "memberId":"7790509818",
-      "firstName":"Brown",
-      "lastName":"Patrick",
+      "firstName":"Patrick",
+      "lastName":"Brown",
       "sex":"M",
       "dob":"6/30/1942",
       "zipcode":"60061"  
     },
     {
       "memberId":"4514861628",
-      "firstName":"Jones",
-      "lastName":"James",
+      "firstName":"James",
+      "lastName":"Johnes",
       "sex":"M",
       "dob":"6/30/1942",
       "zipcode":"60061"  
